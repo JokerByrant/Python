@@ -25,6 +25,7 @@ def download_page(url):
 def get_li(doc):
     soup = BeautifulSoup(doc, 'html.parser')
     ol = soup.find('ol', class_='grid_view')
+    ## 分别使用几个list列表保存信息，更直观
     name = []  # 名字
     star_con = []  # 评价人数
     score = []  # 评分
@@ -66,6 +67,7 @@ def main():
         star_con = star_con + star
         score = score + level_num
         info = info + info_list
+        ## 制作表格
     for (i, m, o, p) in zip(name, star_con, score, info):
         col_A = 'A%s' % (name.index(i) + 1)
         col_B = 'B%s' % (name.index(i) + 1)
