@@ -38,6 +38,7 @@ def get_con(html):
 def main():
     url = 'https://book.douban.com/top250'
     name_list=[]
+    # name和url接收的分别是‘图书名’和‘是否继续下一页’
     while url:
         html = get_html(url)
         name, url = get_con(html)
